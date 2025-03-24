@@ -5,11 +5,15 @@
     font-weight: 400;
     font-style: normal;
     scroll-behavior: smooth;
+    --primary-color: rgb(254, 254, 209);
+    --secondary-color: rgb(154, 125, 58);
+    --text-color: rgb(97, 79, 36);
+
 }
 
 body {
-    background-color: rgb(254, 254, 209);
-    padding: 0 5% 0 5%;
+    background-color:  var(--primary-color);
+    padding: 0 1rem;
     overflow-x: hidden;
     max-width: 100%;
 }
@@ -20,24 +24,25 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-x: hidden;
 }
 
 .flex-container-1-a {
-    background-color: rgb(154, 125, 58);
+    background-color:  var(--secondary-color);
     display: flex;
     justify-content: space-between;
     width: 100%;
     height: 6vh;
     align-items: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 0.625rem;
+    padding-bottom: 0.625rem;
     border-bottom-right-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem;
 }
 
 .flex-container-2 {
     display: flex;
-    padding: 10px;
+    padding: 0.625rem;
     height: 94vh;
     width: stretch;
     justify-content: center;
@@ -48,7 +53,7 @@ body {
     width: 32vw;
     min-width: 12rem;
     height: 40vw;
-    padding: 10px;
+    padding: 0.625rem;
     display: flex;
     justify-content: center;
     align-self: center;
@@ -69,9 +74,9 @@ body {
 .right {
     flex-direction: column;
     display: flex;
-    padding: 10px;
+    padding: 0.625rem;
     font-size: 5rem;
-    color: rgb(97, 79, 36);
+    color:  var(--text-color);
     justify-content: center;
     align-items: center;
 }
@@ -87,7 +92,7 @@ body {
 }
 
 .sub-container-2 {
-    padding-right: 10px;
+    padding-right: 0.625rem;
     justify-content: flex-end;
     display: flex;
     flex-direction: row;
@@ -98,7 +103,7 @@ body {
     display: inline-block;
     justify-content: flex-end;
     margin: 0rem;
-    padding: 10px;
+    padding: 0.625rem;
     font-size: 1.5rem;
     text-decoration: none;
     font-family: "Quantico", sans-serif;
@@ -109,7 +114,7 @@ body {
 
 .nav:hover {
     font-size: 1.625rem;
-    color: #614F24;
+    color:  var(--text-color);
 }
 
 .section-projects {
@@ -139,9 +144,9 @@ body {
     justify-content: center;
     flex-grow: 1;
     flex-direction: column;
-    border: 1px solid rgb(97, 79, 36);
-    border-radius: 16px;
-    box-shadow: 0.5rem 0.5rem rgb(97, 79, 36);
+    border: 1px solid  var(--text-color);
+    border-radius: 1rem;
+    box-shadow: 0.5rem 0.5rem  var(--text-color);
     transition: all 0.2s ease-in-out;
 }
 
@@ -154,11 +159,11 @@ body {
     justify-content: center;
     align-content: center;
     font-size: 1.25rem;
-    padding: 32px;
+    padding: 2rem;
 }
 
 .heading {
-    background-color: rgb(154, 125, 58);
+    background-color:  var(--secondary-color);
     display: flex;
     padding: 1.25rem;
     height: 6vh;
@@ -175,62 +180,49 @@ body {
 
 .section-clubs {
     height: auto;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
 .clubs {
     display: flex;
-    height: 94vh;
+    gap: 2rem;
+    padding: 2rem 0;
+    max-width: 720px;
+    margin: 0 auto;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.club {
+    font-size: 1.5rem;
+    padding: 1.5rem;
+    min-width: 15rem;
+    animation-timeline: scroll();
+    animation-duration: 3s;
+    border-radius: 0.5rem;
+    text-align: center;
 }
 
 .club-right {
-    background-image: linear-gradient(to left, rgb(196, 165, 93), transparent);
-    font-size: 1.5rem;
-    padding: 10px;
-    margin: 10px;
-    margin-right: 12rem;
-    height: auto;
-    width: 40%;
-    border-radius: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     align-self: flex-end;
-    box-shadow: 0.5rem 0rem rgb(183, 154, 89);
-    animation-duration: 3s;
+    background-image: linear-gradient(to left, rgb(196, 165, 93), transparent);
     animation-name: slide-in-right;
-    animation-timeline: scroll();
+    box-shadow: 0.5rem 0rem rgb(183, 154, 89);
+
 }
 
 .club-left {
-    background-image: linear-gradient(to right, rgb(196, 165, 93), transparent);
-    font-size: 1.5rem;
-    padding: 10px;
-    margin: 10px;
-    margin-left: 12rem;
-    height: auto;
-    width: 40%;
-    border-radius: 0.5rem;
-    display: flex;
     align-self: flex-start;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    box-shadow: -8px 0rem rgb(183, 154, 89);
-    animation-duration: 3s;
+    background-image: linear-gradient(to right, rgb(196, 165, 93), transparent);
     animation-name: slide-in-left;
-    animation-timeline: scroll();
+    box-shadow: -8px 0rem rgb(183, 154, 89);
 }
 
 @keyframes slide-in-right {
     from {
-        translate: -150vw 0;
+        translate: -80vw 0;
         scale: 200% 1;
     }
 
@@ -242,7 +234,7 @@ body {
 
 @keyframes slide-in-left {
     from {
-        translate: 150vw 0;
+        translate: 80vw 0;
         scale: 200% 1;
     }
 
@@ -258,7 +250,6 @@ body {
 }
 
 .section-contact {
-    height: 100vh;
     display: flex;
     align-content: center;
     flex-direction: column;
@@ -266,7 +257,6 @@ body {
 
 .contact-form {
     display: flex;
-    height: 94vh;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -281,7 +271,7 @@ fieldset {
     margin-left: 0.13rem;
     margin-right: 0.13rem;
     padding-top: 0.35rem;
-    padding-bottom: 1rem;
+    padding-bottom: 1rem;   
     padding-left: 2rem;
     padding-right: 2rem;
     border: 0.13rem solid rgb(94, 79, 45);
@@ -296,7 +286,7 @@ fieldset {
 .top-form {
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    gap: 0.625rem;
 }
 
 .details-1 {
@@ -304,7 +294,7 @@ fieldset {
     border-bottom: 1px solid black;
     width: 40%;
     background-color: transparent;
-    padding: 4px;
+    padding: 0.25rem;
     font-size: medium;
     margin: 0.13rem;
 }
@@ -313,7 +303,7 @@ fieldset {
     border: 1px solid black;
     border-radius: 0.5rem;
     background-color: transparent;
-    padding: 4px;
+    padding: 0.25rem;
     resize: none;
     font-size: medium;
     margin: 0.13rem;
@@ -328,7 +318,7 @@ fieldset {
     width: 10rem;
     font-size: 1rem;
     height: 2rem;
-    background-color: rgb(154, 125, 58);
+    background-color:  var(--secondary-color);
     border-radius: 0.5rem;
     border: 0;
     color: white;
@@ -342,10 +332,10 @@ fieldset {
 footer {
     display: block;
     text-align: center;
+    width: 100%;
     padding-right: 2rem;
     border-top-left-radius: 0.5rem;
-    border-top-right-radius: 0.5rem;
-    background-image: linear-gradient(to top, rgb(154, 125, 58), transparent, transparent);
+    border-top-right-radius: 0.5rem;    
     padding-bottom: 2vh;
 }
 
@@ -362,7 +352,7 @@ footer {
 
     .intro {
         flex-direction: row;
-        gap: 10px;
+        gap: 0.625rem;
     }
 
     .left {
@@ -412,7 +402,7 @@ footer {
 
     .intro {
         flex-direction: row;
-        gap: 10px;
+        gap: 0.625rem;
     }
 
     .left {
@@ -432,7 +422,7 @@ footer {
     }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 420px) {
     @keyframes slide-in-right {
         from {
             translate: -80vw 0;
